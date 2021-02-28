@@ -9,11 +9,16 @@ class WatchHistory(Base):
 
     sessionID = Column(Integer, primary_key=True)  # Should auto increment
     timeLapsed = Column(Float)
+    startTime = Column(Float)
+    stopTime = Column(Float)
 
-    def __init__(self, time_lapsed):
-        self.timeLapsed = time_lapsed
+
+    def __init__(self, lapsed, start, stop):
+        self.timeLapsed = lapsed
+        self.startTime = start
+        self.stopTime = stop
 
     def __str__(self):
-        return f'WatchHistory({self.sessionID},{self.timeLapsed})'
+        return f'WatchHistory({self.sessionID},{self.timeLapsed},{self.startTime},{self.stopTime})'
 
 
