@@ -1,5 +1,5 @@
-from base import Session, engine, Base
-from watch_history import WatchHistory
+from Data.base import Session, engine, Base
+from Data.watch_history import WatchHistory
 
 Base.metadata.create_all(engine)
 
