@@ -1,9 +1,9 @@
 # coding=utf-8
 # Class representation of the database structure. Table stores the time lapsed for each run of the stopwatch.
 from sqlalchemy import Column, Float, Integer
-from base import Base
+from Data.base import Base
 
-
+# This class maps its properties to match the structure of the postgres DB
 class WatchHistory(Base):
     __tablename__ = 'WatchHistory'
 
@@ -13,12 +13,13 @@ class WatchHistory(Base):
     stopTime = Column(Float)
 
 
-    def __init__(self, lapsed, start, stop):
-        self.timeLapsed = lapsed
+    def __init__(self, start, stop, lapsed):
         self.startTime = start
         self.stopTime = stop
+        self.timeLapsed = lapsed
+
 
     def __str__(self):
-        return f'WatchHistory({self.sessionID},{self.timeLapsed},{self.startTime},{self.stopTime})'
+        return f'WatchHistory [Start:({self.startTime}), Stop:({self.stopTime}), Lapsed:({self.timeLapsed})'
 
 

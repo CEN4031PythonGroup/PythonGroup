@@ -13,13 +13,14 @@ def sendToDB(start, stop, total):
     session.commit()
     session.close()
 
-def queryDB(self):
+
+def queryDB():
     session = Session()
     watchList = session.query(WatchHistory).all()
 
-    print('\n### Past StopWatch :'
-          '\n ID\t\tTimeLapsed\tStart Time\tEnd Time')
+    print('\n### Past StopWatch Runs:'
+          '\nID\tStart Time\tStop Time\tTimeLapsed')
     for watch in watchList:
-        print(f'{watch.sessionID},\t {watch.timeLapsed}, \t{watch.startTime}, \t{watch.stopTime}')
+        print(f'{watch.sessionID}\t{watch.startTime}\t\t{watch.stopTime}\t\t{watch.timeLapsed}')
     print('')
 
