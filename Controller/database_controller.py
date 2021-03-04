@@ -13,7 +13,7 @@ def sendToDB(start, stop, total):
     session.commit()
     session.close()
 
-
+# Query the Postgres DB and print the results to console
 def queryDB():
     session = Session()
     watchList = session.query(WatchHistory).all()
@@ -23,4 +23,11 @@ def queryDB():
     for watch in watchList:
         print(f'{watch.sessionID}\t{watch.startTime}\t\t{watch.stopTime}\t\t{watch.timeLapsed}')
     print('')
+
+# Query the database and return it as a list
+def query():
+    session = Session()
+    watchList = session.query(WatchHistory).all()
+
+    return watchList
 
