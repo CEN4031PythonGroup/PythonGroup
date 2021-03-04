@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="jumbotron text-center">  
+<h1>Stopwatch Tracker</h1>
+
+<p class="lead">The timer is running</p>
+    <button type="button" class="btn btn-primary" onclick="btnStart()">Start</button>
+    <button type="button" class="btn btn-primary" onclick="btnStop()">Stop</button>
+    <br><br>
+    <label>StopWatch:&nbsp;</label><input type="textbox"/>
+<script>
+ var btnStart = function(){
+        $.get('/start')
+    }
+    btnStart()
+
+ var btnStop = function(){
+        $.get('/stop')
+    }
+    btnStop()
+</script>
+
+</div>
+{% endblock %}

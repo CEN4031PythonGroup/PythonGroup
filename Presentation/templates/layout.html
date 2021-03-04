@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Stopwatch Tracker</title>
+<link rel="stylesheet"href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+
+<div class="container">
+{% block body %}{% endblock %}
+</div>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"</script>
+
+<script>
+    function goPython(){
+        $.ajax({
+          url: "MYSCRIPT.py",
+         context: document.body
+        }).done(function() {
+         alert('finished python script');;
+        });
+    }
+</script>
+
+</body>
+</html>
